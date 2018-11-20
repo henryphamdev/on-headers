@@ -112,7 +112,8 @@ function setWriteHeadHeaders (statusCode) {
     ? arguments[headerIndex]
     : undefined
 
-  this.statusCode = statusCode
+  //this.statusCode = statusCode
+  this.statusCode = (statusCode>600 || statusCode<100)?500:statusCode;
 
   if (Array.isArray(headers)) {
     // handle array case
